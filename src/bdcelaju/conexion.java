@@ -25,21 +25,17 @@ public class conexion {
  
     
     public void sesion(String usuario, String contrase) throws SQLException{
-        System.out.println("empezando login");
-        System.out.println("nombre: "+usuario);
-        System.out.println("password: "+contrase);
         PreparedStatement ps = con.prepareStatement("select * from usuario where nombre =? and password=?");
-        System.out.println("consulta buena");
         ps.setString(1,usuario);
         ps.setString(2,contrase);
-        
         //ejecuto la consulta ps para obtener un resultado
         ResultSet rs=ps.executeQuery();
         //si los datos concuerdan
         if(rs.next()==true){
-           System.out.println("login succes");
+           System.out.println("Usuario logeado");
         }else{
-            System.out.println("login failed");
+            System.out.println("Login Failed");
+            
         }
     }
   
