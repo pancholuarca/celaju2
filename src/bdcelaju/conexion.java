@@ -2,7 +2,6 @@
 package bdcelaju;
 
 import java.sql.*;
-import com.mysql.cj.jdbc.ConnectionWrapper;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -20,6 +19,10 @@ public class conexion {
         } catch (Exception e) {
             System.out.println("Sin Conexion a base de datos");
         }
+    }
+    
+    public void desconectar() throws SQLException{
+        con.close();
     }
     
  
